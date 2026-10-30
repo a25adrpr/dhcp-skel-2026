@@ -13,6 +13,8 @@ services:
       rede2:
         ipv4_address: 192.168.140.254
         interface_name: eth2
+    cap_add:
+      - NET_ADMIN    
   dnsserver:
     build: docker/dnsserver
     hostname: dnsserver
@@ -42,9 +44,12 @@ services:
         mac_address: 02:42:ac:11:00:10  # dirección HW fija
 
     command: >
-      sh -c "dhclient -r && dhclient -v eth0 && sleep infinity"
+      sh -c "ip addr flush dev eth0 && dhclient -v eth0 && sleep infinity"
+    cap_add:
+      - NET_ADMIN
     depends_on:
       - kea
+      - cliente2
   cliente2:
     build: ./docker/cliente
 
@@ -53,7 +58,9 @@ services:
         ipv4_address: 192.168.130.222
 
     command: >
-      sh -c "dhclient -r && dhclient -v eth0 && sleep infinity"
+      sh -c "ip addr flush dev eth0 && dhclient -v eth0 && sleep infinity"
+    cap_add:
+      - NET_ADMIN
     depends_on:
       - kea
 
