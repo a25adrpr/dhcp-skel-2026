@@ -42,8 +42,9 @@ services:
         mac_address: 02:42:ac:11:00:10  # dirección HW fija
 
     command: >
-      sh -c "dhclient -v eth0 && sleep infinity"
-
+      sh -c "dhclient -r && dhclient -v eth0 && sleep infinity"
+    depends_on:
+      - kea
   cliente2:
     build: ./docker/cliente
 
@@ -52,7 +53,9 @@ services:
         ipv4_address: 192.168.130.222
 
     command: >
-      sh -c "dhclient -v eth0 && sleep infinity"
+      sh -c "dhclient -r && dhclient -v eth0 && sleep infinity"
+    depends_on:
+      - kea
 
 networks:
   dhcp_lab:
