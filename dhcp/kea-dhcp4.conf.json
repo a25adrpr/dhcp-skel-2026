@@ -1,55 +1,87 @@
 {
-    "Dhcp4": {
-        "interfaces-config": {
-            "interfaces": [ "eth0" ],
-            "dhcp-socket-type": "raw"
-        },
-        "valid-lifetime": 4000,
-        "renew-timer": 1000,
-        "rebind-timer": 2000,
-        "subnet4": [{
-           "subnet": "192.168.10.0/24",
-           "id": 1,
-          "pools": [ 
-            { "pool": "192.168.10.30-192.168.10.31",
-              "option-data": [
-                        {
-                            "name": "routers",
-                            "data": "192.168.10.253"
-                         }
-                ]
-            },
-            { "pool": "192.168.10.101-192.168.10.230" }
-          ],
-          "reservations":[
+  "Dhcp4": {
+    "interfaces-config": {
+      "interfaces": [
+        "eth0"
+      ],
+      "dhcp-socket-type": "raw"
+    },
+    "valid-lifetime": 4000,
+    "renew-timer": 1000,
+    "rebind-timer": 2000,
+    "subnet4": [
+      {
+        "subnet": "192.168.10.0/24",
+        "id": 1,
+        "pools": [
+          {
+            "pool": "192.168.10.30-192.168.10.32",
+            "option-data": [
               {
-                "hostname":"bran",
-                "hw-address":"02:42:a2:11:20:11",
-                "ip-address":"192.168.10.32",
-                "option-data":[
-                  {
-                    "name":"routers",
-                    "data":"192.168.10.252"
-                  }
-                ]
+                "name": "routers",
+                "data": "192.168.10.253"
               }
-            ],
-          "option-data":[
-            {
-              "name":"routers",
-              "data":"192.168.10.254"
-            },
-            {
-             "name" :"domain-name",
-             "data":"stark.lan"
-            }
-          ]
-
-        }],
-
-       "loggers": [{
-            "name": "*",
-            "severity": "DEBUG"
-        }]
-    }
+            ]
+          },
+          {
+            "pool": "192.168.10.101-192.168.10.230"
+          }
+        ],
+        "reservations": [
+          {
+            "hostname": "bran",
+            "hw-address": "02:42:a2:11:20:11",
+            "ip-address": "192.168.10.32",
+            "option-data": [
+              {
+                "name": "routers",
+                "data": "192.168.10.252"
+              }
+            ]
+          }
+        ],
+        "option-data": [
+          {
+            "name": "routers",
+            "data": "192.168.10.254"
+          },
+          {
+            "name": "domain-name",
+            "data": "stark.lan"
+          }
+        ]
+      },
+      {
+        "subnet": "192.168.11.0/24",
+        "id": 2,
+        "option-data": [
+          {
+            "name": "routers",
+            "data": "192.168.11.254"
+          }
+        ]
+      },
+      {
+        "subnet": "192.168.130.0/24",
+        "id": 3,
+        "pools": [
+          {
+            "pool": "192.168.130.100-192.168.130.200"
+          }
+        ],
+        "reservations": [
+          {
+            "hw-address": "02:42:ac:11:00:10",
+            "ip-address": "192.168.130.32"
+          }
+        ]
+      }
+    ],
+    "loggers": [
+      {
+        "name": "*",
+        "severity": "DEBUG"
+      }
+    ]
+  }
 }
