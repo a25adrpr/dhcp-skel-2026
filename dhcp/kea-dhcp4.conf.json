@@ -11,21 +11,33 @@
            "subnet": "192.168.10.0/24",
            "id": 1,
           "pools": [ 
-            { "pool": "192.168.10.30-192.168.10.32",
-
+            { "pool": "192.168.10.30-192.168.10.31",
               "option-data": [
                         {
                             "name": "routers",
-                            "data": ["192.168.10.253"]
+                            "data": "192.168.10.253"
                          }
                 ]
             },
             { "pool": "192.168.10.101-192.168.10.230" }
           ],
+          "reservations":[
+              {
+                "hostname":"bran",
+                "hw-address":"02:42:a2:11:20:11",
+                "ip-address":"192.168.10.32",
+                "option-data":[
+                  {
+                    "name":"routers",
+                    "data":"192.168.10.252"
+                  }
+                ]
+              }
+            ],
           "option-data":[
             {
               "name":"routers",
-              "data":["192.168.10.254"]
+              "data":"192.168.10.254"
             },
             {
              "name" :"domain-name",
