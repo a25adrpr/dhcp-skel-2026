@@ -43,3 +43,8 @@ networks:
     ipam:
       config:
         - subnet: 192.168.130.0/24
+
+  rededns:
+    ipam:
+      config:
+        - subnet: 192.168.100.0/24
