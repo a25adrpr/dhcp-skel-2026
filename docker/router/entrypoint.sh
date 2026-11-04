@@ -14,6 +14,7 @@ nft list ruleset | grep -q 'oifname "eth0" masquerade' || \
 
 
 ip addr add 192.168.130.253/24 dev eth1
+ip addr add 192.168.130.252/24 dev eth1
 
 # Mantener el contenedor vivo
 #Chamar ao relay

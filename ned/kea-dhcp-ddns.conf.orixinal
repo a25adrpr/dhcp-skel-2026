@@ -1,7 +1,7 @@
 // This is a basic configuration for the Kea DHCP DDNS daemon.
 //
 // This is just a very basic configuration. Kea comes with large suite (over 30)
-// of configuration examples and extensive Kea User's Guide. Please refer to
+// of configuration examples and extearyave Kea User's Guide. Please refer to
 // those materials to get better understanding of what this software is able to
 // do. Comments in this configuration file sometimes refer to sections for more
 // details. These are section numbers in Kea User's Guide. The version matching
@@ -43,7 +43,7 @@
                 // - stderr (prints on standard error)
                 // - syslog (logs to syslog)
                 // - syslog:name (logs to syslog using specified name)
-                // Any other value is considered a name of the file
+                // Any other value is coaryadered a name of the file
                 "output": "stdout",
 
                 // Shorter log pattern suitable for use with systemd,

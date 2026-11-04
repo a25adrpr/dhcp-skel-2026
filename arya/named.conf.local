@@ -1,0 +1,13 @@
+//
+// Do any local configuration here
+//
+
+zone "stark.lan" {
+	type primary;
+    file "zonas/db.stark.lan";
+};
+
+zone "10.168.192.in-addr.arpa" {
+    type primary;
+    file "zonas/db.10";
+};
